@@ -2,23 +2,29 @@ package labcodeinspection;
 
 import java.util.Scanner;
 
-public class EmailApp {
+/**
+ *  @author francescamanging
+ */
+public class EmailApp { //NOPMD
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	/**
+	 *  @author francescamanging
+	 */
+	public static void main(final String[] args) {
+		final Scanner scan = new Scanner(System.in); //NOPMD
 
 		System.out.print("Enter your first name: ");
-		String firstName = sc.nextLine();
+		final String firstName = scan.nextLine();
 
 		System.out.print("Enter your last name: ");
-		String lastName = sc.nextLine();
+		final String lastName = scan.nextLine();
 
 		System.out.print("\nDEPARTMENT CODE\n1. for sales\n2. for Development\n3. for accounting\nEnter code: ");
 
-		int depChoice = sc.nextInt();
-		sc.close();
+		final int depChoice = scan.nextInt();
+		scan.close();
 
-		Email email = new Email(firstName, lastName);
+		final Email email = new Email(firstName, lastName);
 		email.setDeparment(depChoice);
 		email.generateEmail();
 		email.showInfo();
