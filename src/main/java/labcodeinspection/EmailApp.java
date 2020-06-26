@@ -13,13 +13,13 @@ public class EmailApp { //NOPMD
 	public static void main(final String[] args) {
 		final Scanner scan = new Scanner(System.in); //NOPMD
 
-		System.out.print("Enter your first name: ");
+		System.out.print("Enter your first name: "); //NOPMD
 		final String firstName = scan.nextLine();
 
-		System.out.print("Enter your last name: ");
+		System.out.print("Enter your last name: ");//NOPMD
 		final String lastName = scan.nextLine();
 
-		System.out.print("\nDEPARTMENT CODE\n1. for sales\n2. for Development\n3. for accounting\nEnter code: ");
+		System.out.print("\nDEPARTMENT CODE\n1. for sales\n2. for Development\n3. for accounting\nEnter code: ");//NOPMD
 
 		final int depChoice = scan.nextInt();
 		scan.close();

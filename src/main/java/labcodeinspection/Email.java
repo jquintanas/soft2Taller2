@@ -43,8 +43,8 @@ public class Email {
 	* @author Fran
 	*/
 	public void showInfo() {
-		System.out.println("\nFIRST NAME= " + mfirstName + "\nLAST NAME= " + mlastName);
-		System.out.println("DEPARMENT= " + department + "\nEMAIL= " + mail + "\nPASSWORD= " + password);
+		System.out.println("\nFIRST NAME= " + mfirstName + "\nLAST NAME= " + mlastName);//NOPMD
+		System.out.println("DEPARMENT= " + department + "\nEMAIL= " + mail + "\nPASSWORD= " + password);//NOPMD
 	}
 
 	/**
