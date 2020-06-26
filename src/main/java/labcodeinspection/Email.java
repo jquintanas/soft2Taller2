@@ -1,25 +1,57 @@
 package labcodeinspection;
 
+/**
+* @author Fran
+*/
 public class Email {
+	
+	/**
+	* @author franManGing
+	*/
+	private  String mfirstName; //NOPMD
+	/**
+	* @author franManGing
+	*/
+	private  String mlastName;//NOPMD
+	/**
+	* @author franManGing
+	*/
+	private  String department; //NOPMD
+	/**
+	* @author franManGing
+	*/
+	private  String mail; //NOPMD
+	/**
+	* @author franManGing
+	*/
+	private  String password;//NOPMD
+	  
+	/**
+	* @author Fran
+	*/
+	private static int defPassLength = 8;
 
-	private String m_firstName;
-	private String m_lastName;
-	private String password = null;
-	private String department;
-	private int defaultpasswordLength = 8;
-	private String email;
-
-	public Email(String firstName, String lastName) {
-		this.m_firstName = firstName;
-		this.m_lastName = lastName;
+	/**
+	* @author Fran
+	*/
+	public Email(final String firstName, final String lastName) {
+		this.mfirstName = firstName;
+		this.mlastName = lastName;
 	}
 
+	/**
+	* @author Fran
+	*/
 	public void showInfo() {
-		System.out.println("\nFIRST NAME= " + m_firstName + "\nLAST NAME= " + m_lastName);
-		System.out.println("DEPARMENT= " + department + "\nEMAIL= " + email + "\nPASSWORD= " + password);
+		System.out.println("\nFIRST NAME= " + mfirstName + "\nLAST NAME= " + mlastName);//NOPMD
+		System.out.println("DEPARMENT= " + department + "\nEMAIL= " + mail + "\nPASSWORD= " + password);//NOPMD
 	}
 
-	public void setDeparment(int depChoice) {
+	/**
+	* @author Fran
+	*/
+	public void setDeparment(int depChoice) { // NOPMD 
+		
 		switch (depChoice) {
 		case 1:
 			this.department = "sales";
@@ -30,22 +62,33 @@ public class Email {
 		case 3:
 			this.department = "acct";
 			break;
+		default:
+	        // unknown type! based on the language,
+	        // there should probably be some error-handling
+	        // here, maybe an exception
 		}
 	}
 
-	private String randomPassword(int length) {
-		String set = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#$&@*";
-		char[] password = new char[length];
+	
+	private String randomPassword( int length) { // NOPMD 
+		String set = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#$&@*"; // NOPMD 
+		char[] password = new char[length]; // NOPMD 
+		
 		for (int i = 0; i < length; i++) {
-			int rand = (int) (Math.random() * set.length());
-			password[i] = set.charAt(rand);
+			final int rand = (int) (Math.random() * set.length());
+			password[i] = set.charAt(rand); // NOPMD 
 		}
 		return new String(password);
 	}
 
-	public void generateEmail() {
-		this.password = this.randomPassword(this.defaultpasswordLength);
-		this.email = this.m_firstName.toLowerCase() + this.m_lastName.toLowerCase() + "@" + this.department
+	/**
+	*
+	*
+	* @author FranMan Ging
+	*/
+	public void generateEmail() { // NOPMD
+		this.password = this.randomPassword(Email.defPassLength);
+		this.mail = this.mfirstName.toLowerCase() + this.mlastName.toLowerCase() + "@" + this.department // NOPMD 
 				+ ".espol.edu.ec";
 	}
 }
